@@ -5,6 +5,13 @@ import org.nemomobile.accountsui 1.0
 Page {
     property Account account
 
+    Connections {
+        target: account
+        onAccountRemoved: {
+            pageStack.pop()
+        }
+    }
+
     PageHeader {
         id: header
         text: account.id
@@ -36,6 +43,31 @@ Page {
                 account.refresh()
             }
         }
+        ToolIcon {
+            iconId: "icon-m-toolbar-view-menu"
+            onClicked: (accountMenu.status == DialogStatus.Closed) ? accountMenu.open() : accountMenu.close()
+        }
     }
 
+
+    Menu {
+        id: accountMenu
+        MenuLayout {
+            MenuItem {
+                text: "Enable"
+                onClicked: account.enable()
+            }
+
+            MenuItem {
+                text: "Disable"
+                onClicked: account.disable()
+            }
+
+            MenuItem {
+                text: "Remove"
+                onClicked: account.remove()
+            }
+
+        }
+    }
 }

@@ -48,6 +48,13 @@ PageStackWindow {
                     editor.open()
                 }
             }
+
+            ToolIcon {
+                iconId: "icon-m-toolbar-refresh"
+                onClicked: {
+                    accountmodel.refresh()
+                }
+            }
         }
     }
 

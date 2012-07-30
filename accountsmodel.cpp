@@ -30,6 +30,7 @@ void AccountsModel::refresh()
 
     foreach (QString id, result.split('\n')) {
         Account *account = new Account(this);
+        connect(account, SIGNAL(accountRemoved()), SLOT(refresh()));
         account->setId(id);
         accounts.append(account);
         qDebug() << Q_FUNC_INFO << id;

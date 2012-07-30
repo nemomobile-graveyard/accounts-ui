@@ -16,9 +16,14 @@ public:
 
     Q_INVOKABLE void refresh();
 
+    Q_INVOKABLE void enable();
+    Q_INVOKABLE void disable();
+    Q_INVOKABLE void remove();
+
 signals:
     void idChanged();
     void detailsChanged();
+    void accountRemoved();
 
 private:
     QString accountid;

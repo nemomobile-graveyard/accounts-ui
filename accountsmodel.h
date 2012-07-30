@@ -12,12 +12,14 @@ public:
         AccountRole = Qt::UserRole
     };
 
-    Q_INVOKABLE void refresh();
     int rowCount(const QModelIndex&) const;
     QVariant data(const QModelIndex&, int) const;
 
     Q_INVOKABLE bool createAccount(const QString &protocol, const QString &user, const QString &password);
     Q_INVOKABLE QString errorString() const { return errstring; }
+
+private slots:
+    void refresh();
 
 private:
     QList<Account *> accounts;
