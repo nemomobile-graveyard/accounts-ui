@@ -1,0 +1,6 @@
+this repository/application is one gigantic hack to avoid having to use mc-tool
+from the command line, because as everone knows, that's awkward when you only
+have a virtual keyboard.
+
+please don't copy the source, it's hideous. please don't look at the source,
+unless you promise to fix it first :)
