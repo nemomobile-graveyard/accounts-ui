@@ -31,7 +31,7 @@ QString Account::details() const
 void Account::refresh()
 {
     QProcess ls;
-    ls.start(QString("ls -al %1").arg(accountid));
+    ls.start(QString("mc-tool show %1").arg(accountid));
     if (!ls.waitForFinished()) {
         qWarning() << Q_FUNC_INFO << "Can't wait for finished";
         return;

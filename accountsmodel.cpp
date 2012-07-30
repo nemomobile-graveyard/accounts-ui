@@ -16,7 +16,7 @@ AccountsModel::AccountsModel(QObject *parent)
 void AccountsModel::refresh()
 {
     QProcess ls;
-    ls.start("ls");
+    ls.start("mc-tool list");
     if (!ls.waitForFinished()) {
         qWarning() << Q_FUNC_INFO << "Can't wait for finished";
         return;
