@@ -56,16 +56,16 @@ PageStackWindow {
                 }
             }
         }
-    }
 
-    AccountEditSheet {
-        id: editor
+        AccountEditSheet {
+            id: editor
 
-        onAccepted: {
-            if (!accountmodel.createAccount(protocol, userName, password)) {
-                errorTitle.text = "Account creation failed"
-                subtext.text = accountmodel.errorString()
-                error.open()
+            onAccepted: {
+                if (!accountmodel.createAccount(protocol, userName, password)) {
+                    errorTitle.text = "Account creation failed"
+                    subtext.text = accountmodel.errorString()
+                    error.open()
+                }
             }
         }
     }
