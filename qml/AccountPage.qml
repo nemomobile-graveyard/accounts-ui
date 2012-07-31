@@ -64,6 +64,17 @@ Page {
             }
 
             MenuItem {
+                text: "Request online"
+                onClicked: account.goOnline()
+            }
+
+            MenuItem {
+                text: "Request offline"
+                onClicked: account.goOffline()
+            }
+
+
+            MenuItem {
                 text: "Remove"
                 onClicked: account.remove()
             }

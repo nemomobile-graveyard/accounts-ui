@@ -77,3 +77,27 @@ void Account::remove()
 
     emit accountRemoved();
 }
+
+void Account::goOnline()
+{
+    QProcess ls;
+    ls.start(QString("mc-tool request %1 online").arg(accountid));
+    if (!ls.waitForFinished()) {
+        qWarning() << Q_FUNC_INFO << "Can't wait for finished";
+        return;
+    }
+
+    refresh();
+}
+
+void Account::goOffline()
+{
+    QProcess ls;
+    ls.start(QString("mc-tool request %1 offline").arg(accountid));
+    if (!ls.waitForFinished()) {
+        qWarning() << Q_FUNC_INFO << "Can't wait for finished";
+        return;
+    }
+
+    refresh();
+}
