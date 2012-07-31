@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=accounts-ui
+Icon=icon-l-settings
+Exec=invoker -s --type=d /usr/bin/accounts-ui -fullscreen
+Comment=Account configuration with less mc-tool
