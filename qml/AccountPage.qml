@@ -73,6 +73,11 @@ Page {
                 onClicked: account.goOffline()
             }
 
+            MenuItem {
+                text: "Ignore SSL errors"
+                onClicked: account.update("bool:ignore-ssl-errors=1")
+            }
+
 
             MenuItem {
                 text: "Remove"

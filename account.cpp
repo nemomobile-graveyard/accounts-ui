@@ -78,6 +78,18 @@ void Account::remove()
     emit accountRemoved();
 }
 
+void Account::update(QString keyValue)
+{
+    QProcess ls;
+    ls.start(QString("mc-tool update %1 %2").arg(accountid).arg(keyValue));
+    if (!ls.waitForFinished()) {
+        qWarning() << Q_FUNC_INFO << "Can't wait for finished";
+        return;
+    }
+
+    refresh();
+}
+
 void Account::goOnline()
 {
     QProcess ls;

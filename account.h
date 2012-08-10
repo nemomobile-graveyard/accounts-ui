@@ -20,6 +20,8 @@ public:
     Q_INVOKABLE void disable();
     Q_INVOKABLE void remove();
 
+    Q_INVOKABLE void update(QString keyValue);
+
     Q_INVOKABLE void goOnline();
     Q_INVOKABLE void goOffline();
 
